@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/contact_screen.dart';
+import 'package:flutter_application_1/screen_message/message.dart';
 import 'screen/drawer.dart';
 
 void main() => runApp(const MyApp());
@@ -52,12 +53,12 @@ class ListTileSelectExampleState extends State<ListTileSelectExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(backgroundColor: Colors.black,),
+      drawer: const MyDrawer(),
         appBar: AppBar(
           title: const Text(
             'MyChat',
           ),
-          elevation: 5,
+          elevation: 5,/*
           leading: isSelectionMode
               ? IconButton(
                   icon: const Icon(Icons.close),
@@ -106,7 +107,7 @@ class ListTileSelectExampleState extends State<ListTileSelectExample> {
                           List<bool>.generate(listLength, (_) => _selectAll);
                     });
                   }),
-          ],
+          ],*/
         ),
         body: _isGridMode
             ? GridBuilder(
@@ -246,7 +247,7 @@ class _ListBuilderState extends State<ListBuilder> {
                   _toggle(index);
                   Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ContactScreen()),
+                  MaterialPageRoute(builder: (context) => const Message()),
                 );
                 },
                 onLongPress: () {
@@ -262,7 +263,7 @@ class _ListBuilderState extends State<ListBuilder> {
                   children: [
                   Column(
                     children: [
-                      load ?
+                      load ? 
                       TextButton(child: Text("${DateTime.now().hour}:${DateTime.now().minute}",
                       style: const TextStyle(color: Colors.black26),),
                       onPressed: () {

@@ -10,8 +10,27 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 6,
-      child: Column(children: [
-        const SizedBox(height: 100),
+      child: Column(
+        children: [
+        const UserAccountsDrawerHeader(
+        decoration: BoxDecoration(color:  Color(0xff764abc)),
+        accountName: Text(
+          "Prince LAWSON",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        accountEmail: Text(
+          "princelawson93@gmail.com",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            color: Colors.white60
+          ),
+        ),
+        currentAccountPicture: FlutterLogo(),
+      ),
+        const SizedBox(height: 10),
         ListTile(
           onTap: () {
             Navigator.of(context).pushReplacementNamed('/');
@@ -48,6 +67,13 @@ class MyDrawer extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
         ),
+        const SizedBox(height: 50,),
+        const Padding(
+              padding: EdgeInsets.fromLTRB(12, 100, 12, 2),
+              child: Text("from",style: TextStyle(fontSize: 10, color: Colors.black38),),
+            ),
+            const Text("PrinceTheprog",style: TextStyle(fontSize: 12),)
+
       ]),
     );
   }
